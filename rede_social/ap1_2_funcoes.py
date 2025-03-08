@@ -9,17 +9,24 @@ class Perfil:
         self.celular = telefone
         self.sexo = sexo
         
-    def nome_completo(self):
-        return f'{self.nome} {self.sobrenome}'    
-
     def exibePerfil(self):
         print(f'\nInformações do seu perfil:\n \nNome: {self.nome}\nSobrenome: {self.sobrenome}\nData de Nascimento: {self.data_nascimento}\nEmail: {self.email}\nNúmero de telefone: {self.celular}\nSexo: {self.sexo}')
 
 
 class Postagem:
-    def __init__(self, perfil, texto):
-        self.perfil = perfil
+    def __init__(self, texto:str):
         self.texto = texto
+        self.comentarios = []
     
     def exibePostagem(self):
-         return f'{self.perfil.nome_completo()} \n{self.texto()}'
+        print(f'{self.texto}')
+    
+    def adicionaComentario(self, comentario:str):
+        self.comentarios.append(comentario)
+
+    def exibeComentario(self):
+        if self.comentarios:
+            for indice, comentario in enumerate(self.comentarios, start=1):
+                print(f'{comentario}')
+        else:
+            print('Seja a primeira pessoa a comentar! ')
