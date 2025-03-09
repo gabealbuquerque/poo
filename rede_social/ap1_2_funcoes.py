@@ -15,7 +15,8 @@ class Perfil:
 
 class Postagem:
     def __init__(self, texto:str):
-        self.texto = texto
+        self.texto = []
+        self.texto.append(texto)
         self.comentarios = []
     
     def exibePostagem(self):
