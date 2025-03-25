@@ -10,7 +10,6 @@ class TesouroDireto(ABC):
     def simular(self):
         pass
 
-
 class TesouroPrefixado(TesouroDireto):
     def __init__(self, tempo: int, valor: float):
         # A taxa para Tesouro Prefixado já é definida, não precisamos de parâmetro.
